@@ -1,3 +1,10 @@
 # Under construction...
 
 - https://www.mathematica-journal.com/2010/09/20/drima-a-minimal-system-for-probing-the-dynamics-of-change-in-a-reactive-multi-agent-setting/
+
+---
+
+```
+### Folder Structure
+- TODO: explicar estrutura de pastas
+```
