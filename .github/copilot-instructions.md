@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+### Description
+
 - DRIMA (**D**ynamics of **R**andomly **I**nteracting **M**oving **A**gents) is a minimal multi-agent system designed to study how reactive agents influence and adapt to one another’s behaviors through interactions;
 - Implemented in Mathematica, it models agents moving on a 2D grid with periodic boundaries;
 - Each agent occupies one cell and follows either deterministic (D-agents) or random (R-agents) movement patterns;
@@ -19,59 +21,6 @@ DRIMA serves as a metaphorical model for social, behavioral, or conceptual adapt
 - Use meaningful variable and function names;
 - Write docstrings for all public modules, functions, and classes;
 - Include at least one example usage in comments. Provide an overview of the project you're working on, including its purpose, goals, and any relevant background information.
-
-## Business Rules
-
-### Environment Setup
-
-- The world is a 2D grid with periodic boundaries (edges wrap around);
-- Each cell can contain one agent;
-- Simulation progresses through discrete time steps (world updates).
-
-### Agent Types
-
-- D-agent (Deterministic): Moves in one fixed direction with probability 1;
-- R-agent (Random): Moves in all directions with varying probabilities that sum to 1.
-
-### Movement Rules
-
-- Movement directions: E, NE, N, NW, W, SW, S, SE, and X (no movement);
-- The movement pattern is a probability vector for these 9 directions;
-- Agents can have full mobility (always move) or partial mobility (can stay still).
-
-### Interaction Rules
-
-- Interaction Range: Agents interact if within a radius R (usually 1);
-- Interaction Scope: Only binary interactions (two agents at a time);
-- Interaction Type:
-    - Same-type or different-type (e.g., D–D, R–R, D–R);
-    - Case (uppercase/lowercase) defines whether an agent changes (e.g., DR → D changes R).
-- Interaction Mode:
-    - Synchronous: All agents processed sequentially per update;
-    - Asynchronous: Random pairs interact one at a time.
-- Interaction Direction:
-    - One-way (only one agent changes) — implemented;
-    - Two-way (both agents change) — conceptually supported but not implemented.
-- Interaction Effect:
-    - Direct: Immediate change in movement pattern (implemented);
-    - Indirect: Change mediated by an internal state (conceptual).
-- Interaction Intensity (Δp):
-    - Fixed or variable increment to probability values;
-    - Typical `Δp = 1/9` (moderate convergence).
-- Determinism:
-    - Movement is stochastic; interactions can be deterministic or probabilistic.
-- Content:
-    - Interactions are reactive (no memory, no internal model).
-
-### Normalization Rule
-
-- After each interaction, the sum of all movement probabilities for each agent must equal 1;
-If any probabilities exceed 1 or become negative, they are adjusted and re-normalized.
-
-### Outcome Rule
-
-- Over time, R-agents may converge to deterministic movement patterns of nearby D-agents;
-- Depending on parameters (Δp, grid size, density), dynamics may show stability, fluctuation, or chaotic patterns.
 
 ## Coding and Explanation Instructions
 
@@ -117,3 +66,114 @@ If any probabilities exceed 1 or become negative, they are adjusted and re-norma
 - Explain the "why" behind recommendations;
 - Acknowledge good patterns when you see them;
 - Ask clarifying questions when code intent is unclear.
+
+## Project Business Rules
+
+### Concepts
+
+#### Grid
+
+- Definido por uma grade discreta bidimensional onde há agentes que se movem nela;
+- Cada agente ocupa uma única célula da grade do tipo autômato celular, que possui condições de contorno periódicas;
+    - Ou seja, cada aresta da grade é envolvida pela sua aresta oposta.
+- Mundo é um instantâneo do estado de todos os agentes do mundo, incluindo a posição atual na grade e padrão de movimento, bem como os valores de quaisquer outras propriedades que possam ter sido definidas para eles;
+- História é a sequência de mundos gerados;
+- Para representar o mundo, usamos a lista `{list_of_agents, grid_size, types_of_interaction, world_mobility}`;
+- Os parametros sao auto-explicativos, mas para ir mais fundo:
+    - O `world_mobility` eh um parametro definido pelo usuario que pode assumir os valores F ou P, representando, respectivamente, mobilidade total ou parcial;
+        - Quando o mundo for F (Full Mobility) os agentes devem sempre se mover a cada iteração;
+            - A probabilidade de “não se mover” (direção X) é fixada em 0.
+        - E quando for P (Partial mobility) os agentes podem permanecer na mesma célula, ou seja, a probabilidade de “não mover” (X) é maior que 0 e variável.
+
+#### Agents
+
+- Os dois tipos de agentes são denominados D e R;
+    - Os agentes D se movem deterministicamente;
+    - Os agentes R se movem aleatoriamente.
+
+##### Representation
+
+- Todo agente eh representado pela lista `{identity, position}`, onde:
+    - `identity = {name, movement_pattern, list_of_properties}`, eh um conjunto de caracteristicas que define o nome e o estado do agente;
+        - O atributo `name` eh a string formada pela concatenacao do tipo do agente (D ou R) e o numero de identificacao unico (id);
+        - O atributo `movement_pattern = {Pe, Pne, Pn, Pnw, Pw, Psw, Ps, Pse, X}`, onde Pd eh a probabilidade de o agente se mover na d-direcao (todas as posicoes de uma rosa dos ventos);
+        - O atributo `list_of_properties` nao sera implementado.
+    - E `position = {x, y}` da ao agente suas coordenadas atuais.
+
+### Rules
+
+#### Movement
+
+- As possibilidades de movimentacao sao:
+    - East (E), Northeast (NE), North (N), Northwest (NW), West (W), Southwest (SW), South (S), Southeast (SE) e X para "no-movement";
+    - A forma como um agente se move eh denominada padrao de movimento, onde:
+        - Agentes do tipo D possuem probabilidade 1 para alguma direcao e 0 para todas as outras;
+        - Agentes do tipo R possuem probabilidades diferentes que definem a tendencia do seu movimento em qualquer direcao, incluindo a possibilidade de ficar parado;
+        - A soma deve dar 1.
+
+#### Interactions
+
+- Os agentes podem interagir apenas de forma binária (dois por vez), e o resultado da interação entre dois agentes é uma mudança em seus padrões de movimento individuais;
+- Se dois agentes escolhidos estiverem em uma distancia maior ou igual do **alcance de interacao** (que pode ser definida pelo usuario, mas por padrao eh igual a 1), podera haver interacao entre eles; caso for igual a 0, significa que as interações podem ocorrer quando ambos os agentes compartilham a mesma célula da grade.
+
+##### Elements
+
+- **Alcance de Ação / Interacao**: Usa a vizinhança de Moore com raio R (geralmente 1). A influência dos agentes é simétrica e sem direção preferencial. Se R = 0, a interação ocorre apenas entre agentes na mesma célula;
+- **Escopo**: Pode ser binário ou múltiplo, mas atualmente apenas interações binárias (entre dois agentes) são permitidas;
+- **Tipo**: Pode envolver agentes do mesmo tipo ou de tipos diferentes. O usuário define quais tipos são afetados ou permanecem inalterados;
+- **Modo**: Pode ser síncrono (todos os agentes interagem em sequência, com ordem aleatória a cada iteração) ou assíncrono (um agente e um vizinho aleatórios interagem por vez);
+    - No modo **SINCRONO**, todos os agentes são processados em sequência dentro da mesma iteração;
+        - Cada agente interage uma vez por rodada, com um vizinho escolhido aleatoriamente;
+        - A ordem é embaralhada a cada iteração para evitar viés.
+    - No modo **ASSINCRONO**, a cada passo é escolhido aleatoriamente um agente e um vizinho aleatório dentro do alcance; eles interagem, e o estado do mundo é atualizado imediatamente;
+        - O processo se repete várias vezes.
+- **Direção**: Unidirecional (apenas um agente é afetado) ou bidirecional (ambos são afetados). Atualmente, apenas o modo unidirecional é implementado;
+- **Efeito**: Direto (o movimento do agente muda imediatamente após a interação) ou indireto (efeito mediado por outra variável);
+- **Intensidade**: Define o quanto algo muda na interação — pode ser fixa ou variável, escolhida entre valores discretos predefinidos;
+- **Determinismo**: As interações são determinísticas, embora os movimentos dos agentes sejam não determinísticos;
+- **Conteúdo**: Reativo, ou seja, o resultado depende apenas do estado atual dos agentes; não há memória nem representação interna do mundo.
+
+##### Types
+
+- O tipo de interacao deve estar contido na lista `{dd, DD, rr, RR, dR, Rd}`;
+- Se o tipo de agente for especificado em letras maiúsculas, isso significa que ele sofrerá uma interação efetiva; ou seja, seu padrão de movimento poderá ser alterado pela interação;
+- Por outro lado, se o tipo de agente for especificado em letras minúsculas, a interação se torna ineficaz para o agente, pois ele sempre sairá inalterado;
+- Por exemplo: enquanto DD implica que ambos os agentes podem ser modificados pela interação, dd implica que eles nunca serão;
+- E embora as interações Dr ou rD nao serao implementadas;
+- As interacoes padrao sao `{dd, RR, dR, Rd}`.
+
+##### The Direct Interactions
+
+###### General Aspects
+
+- Cada agente possui um padrão de movimento: um conjunto de probabilidades associadas às 8 direções possíveis (N, NE, E, SE, S, SW, W, NW) e à possibilidade de não se mover (X);
+- Quando dois agentes interagem, ocorre uma alteração local nessas probabilidades, em cada direção, com base nos valores atuais de ambos;
+- A interação é direta, isto é, **modifica imediatamente o padrão de movimento**;
+- Apenas o menor valor de probabilidade do par (entre os dois agentes) é aumentado;
+- Após a atualização, o vetor de probabilidades é **normalizado** para que a soma total continue igual a 1.
+
+###### Fixed Mode
+
+- A variação da probabilidade é constante, independente dos valores atuais;
+- Fórmula: `\Delta p = Fp/9`, onde:
+    - `Fp`: fator de incremento de probabilidade;
+    - `9`: número de direções possíveis (8 + 1 sem movimento);
+    - Quanto maior o Fp, mais rápidas e instáveis se tornam as mudanças;
+        - Exemplo: Fp = 1 → convergência estável; Fp = 5 → instabilidade e oscilações.
+
+###### Variable Mode
+
+- A variação depende da diferença entre as probabilidades atuais dos dois agentes em uma mesma direção;
+- Fórmula: `\Delta p = (P_d^i - P_d^j) \times \frac{Fp}{9}`, onde:
+    - `P_d^i` e `P_d^j`: probabilidades dos agentes i e j naquela direção;
+- Assim, quanto maior a diferença entre eles, maior o impacto da interação;
+- Mantém o mesmo Fp como fator de escala, mas o valor final de Δp muda dinamicamente.
+
+
+###### Other Rules About Fixed / Variable Modes
+
+- O aumento nunca pode tornar a menor probabilidade maior que a maior probabilidade pré-interação;
+- Após cada atualização, é feita normalização:
+    - Se a soma > 1: subtrai-se igualmente o excesso de todas as direções com probabilidade > 0;
+    - Se a soma < 1: adiciona-se igualmente o déficit.
+- Probabilidades negativas são truncadas a 0, e o processo pode ser iterado até estabilizar.

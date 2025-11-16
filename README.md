@@ -4,7 +4,13 @@
 
 ---
 
-```
-### Folder Structure
-- TODO: explicar estrutura de pastas
-```
+TODO
+
+- saida em json pra dps dar pra fazer analytics
+
+> VER COMO FICARA SALVO O JSON
+> IMPLEMENTAR:
+        agents_group.add_argument("--agents_file", type=str, default=None, help="Path to a file containing agent definitions. Default: None.")
+    > NAO SO ESSE MAS DPS DO JSON ARRUMAR O PARSER DE ARGUMENTOS
+    
+
