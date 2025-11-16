@@ -1,3 +1,4 @@
+import json
 import random
 import argparse
 
@@ -285,72 +286,53 @@ class Interaction:
 
 
 if __name__ == "__main__":
-    # Argument parser setup.
     parser = argparse.ArgumentParser(description="Run the DRIMA simulation.")
-    agents_group = parser.add_argument_group("Agents")
-    agents_group.add_argument("--agents_file", type=str, required=True, default=None, help="Path to a file containing agent definitions. Default: None.")
-    world_group = parser.add_argument_group("World")
-    world_group.add_argument("--grid_size", type=str, default="10x10", help="Grid size in the format 'widthxheight'. Default: '10x10'.")
-    world_group.add_argument("--interaction_range", type=int, default=1, help="Interaction range for agents. Default: 1.")
-    world_group.add_argument("--world_mobility", type=str, default="F", help="World mobility ('F' for full, 'P' for partial). Default: 'F'.")
-    world_group.add_argument("--iterations", type=int, default=100, help="Number of iterations to run the simulation. Default: 100.")
-    world_group.add_argument("--update_mode", type=str, default="Synchronous", help="Update mode ('Synchronous' or 'Asynchronous'). Default: 'Synchronous'.")
-    interaction_group = parser.add_argument_group("Interaction")
-    interaction_group.add_argument("--interaction_type", type=str, default="dR", help="Type of interaction (e.g., 'dd', 'RR', 'dR', 'Rd'). Default: 'dR'.")
-    interaction_group.add_argument("--intensity", type=float, default=1.0, help="Intensity of the interaction. Default: 1.0.")
-    interaction_group.add_argument("--mode", type=str, default="fixed", help="Interaction mode ('fixed' or 'variable'). Default: 'fixed'.")
+    parser.add_argument("--config", type=str, required=True, help="Path to config file aontaining all necessary configurations.")
+    parser.add_argument("--epochs", type=int, default=50, help="Amount of iterations (Default: 50).")
     args = parser.parse_args()
 
-    # Create a world.
-    world = World(
-        grid_size=tuple(map(int, args.grid_size.split('x'))),
-        interaction_range=args.interaction_range,
-        world_mobility=args.world_mobility
-    )
+    with open(args.config, "r") as config_file:
+        SETTINGS = json.load(config_file)
 
-    # TODO: coiso pra implementar (1)
-    # Create agents.
-    agents = [
-        Agent(
-            agent_id="D1",
-            position=(0, 0),
-            movement_pattern={"E": 1.0, "X": 0.0}
-        ),
-
-        Agent(
-            agent_id="R1",
-            position=(1, 1),
-            movement_pattern={"E": 0.2, "X": 0.8}
+        world = World(
+            grid_size=tuple(SETTINGS["settings"]["world"]["dimensions"]),
+            interaction_range=SETTINGS["settings"]["world"]["interaction_range"],
+            world_mobility=SETTINGS["settings"]["world"]["mobility"]
         )
-    ]
 
-    # Add agents to the world.
-    for agent in agents:
-        world.add_agent(agent)
+        agents = SETTINGS["world"]["agents"]
 
-    # Main loop.
-    ITERATIONS = args.iterations
-
-    for iteration in range(ITERATIONS):
-        print("----------------------------- START OF ITERATION -----------------------------")
-        print(f"Iteration [{iteration + 1}] ; Percentage [{(iteration + 1) / ITERATIONS * 100:.2f}%]")
-
-        print(">>> WORLD STATE <<<")
-        print(world)
-        print()
-
-        print(">>> AGENT STATES <<<")
         for agent in agents:
-            print(agent)
-        print()
+            world.add_agent(Agent(
+                agent_id=agent["id"],
+                position=tuple(agent["position"]),
+                movement_pattern=agent["movement_pattern"]
+            ))
 
-        print(">>> UPDATING WORLD <<<")
-        world.update(
-            interaction_config={
-                "interaction_type": args.interaction_type,
-                "intensity": args.intensity,
-                "mode": args.mode
-            },
-            update_mode=args.update_mode
-        )
-        print("----------------------------- FINAL OF ITERATION -----------------------------\n")
+        for iteration in range(args.epochs):
+            print(f"[^] Iteration #{iteration + 1}, Progress: {((iteration + 1) / args.epochs) * 100:.2f}%")
+
+            for agent in world.agents:
+                print(agent)
+
+            # Write agents' states to the "history" section of the JSON config file.
+            current_state = {
+                "iteration": iteration + 1,
+                "agents": [
+                    {
+                        "id": agent.agent_id,
+                        "position": agent.position,
+                        "movement_pattern": agent.movement_pattern
+                    } for agent in world.agents
+                ]
+            }
+
+            SETTINGS["history"].append(current_state)
+
+            world.update(
+                interaction_config=SETTINGS["settings"]["interaction"],
+                update_mode=SETTINGS["settings"]["world"]["update_mode"]
+            )
+
+    with open(args.config, "w") as config_file:
+        json.dump(SETTINGS, config_file, indent=4)
