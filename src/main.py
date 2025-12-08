@@ -129,23 +129,17 @@ class World:
         if update_mode == "Synchronous":
             random.shuffle(self.agents)
 
-            for agent in self.agents:
-                agent.move(self.grid_size, self.world_mobility)
+        for _ in range(len(self.agents)):
+            agent1 = random.choice(self.agents) if update_mode == "Asynchronous" else self.agents[_]
+            agent2 = random.choice(self.agents)
 
-            for i, agent1 in enumerate(self.agents):
-                for agent2 in self.agents[i + 1:]:
-                    if self._within_interaction_range(agent1.position, agent2.position):
-                        interaction = Interaction(interaction_type=interaction_config["interaction_type"], intensity=interaction_config["intensity"], mode=interaction_config["mode"])
-                        interaction.process(agent1, agent2)
-
-        if update_mode == "Asynchronous":
-            for _ in range(len(self.agents)):
-                agent1 = random.choice(self.agents)
-                agent2 = random.choice(self.agents)
-
-                if agent1 != agent2 and self._within_interaction_range(agent1.position, agent2.position):
-                    interaction = Interaction(interaction_type=interaction_config["interaction_type"], intensity=interaction_config["intensity"], mode=interaction_config["mode"])
-                    interaction.process(agent1, agent2)
+            if agent1 != agent2 and self._within_interaction_range(agent1.position, agent2.position):
+                interaction = Interaction(
+                    interaction_type=interaction_config["interaction_type"],
+                    intensity=interaction_config["intensity"],
+                    mode=interaction_config["mode"]
+                )
+                interaction.process(agent1, agent2)
 
 
     def _within_interaction_range(self, pos1: tuple[int, int], pos2: tuple[int, int]) -> bool:
@@ -243,13 +237,31 @@ class Interaction:
         # Update probabilities for each direction.
         for direction in target_agent.movement_pattern:
             delta_p = self._calculate_delta(
-                target_agent.movement_pattern[direction],
-                source_agent.movement_pattern[direction]
+                target_agent.movement_pattern.get(direction, 0.0),
+                source_agent.movement_pattern.get(direction, 0.0)
             )
 
             target_agent.movement_pattern[direction] += delta_p
 
         self._normalize(target_agent)
+
+
+    def _normalize(self, agent: Agent) -> None:
+        """
+        Normalize the movement pattern of an agent.
+
+        :param agent: The agent whose movement pattern will be normalized.
+        :type agent: Agent
+        """
+        total_prob = sum(agent.movement_pattern.values())
+
+        for direction in agent.movement_pattern:
+            agent.movement_pattern[direction] /= total_prob
+
+        # Ensure "X" probability is not dominant
+        if agent.movement_pattern['X'] > 0.2:
+            agent.movement_pattern['X'] = 0.2
+            self._normalize(agent)
 
 
     def process(self, agent1: Agent, agent2: Agent) -> None:
@@ -296,7 +308,7 @@ if __name__ == "__main__":
 
         world = World(
             grid_size=tuple(SETTINGS["settings"]["world"]["dimensions"]),
-            interaction_range=SETTINGS["settings"]["world"]["interaction_range"],
+            interaction_range=SETTINGS["settings"]["interaction"]["range"],
             world_mobility=SETTINGS["settings"]["world"]["mobility"]
         )
 
