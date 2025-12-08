@@ -13,7 +13,7 @@
             // 'fixed' or 'variable'
             "mode": string,
             // 'dd', 'RR', 'dR' or 'Rd
-            "type": string
+            "interaction_type": string
         }
     },
     "world": {
