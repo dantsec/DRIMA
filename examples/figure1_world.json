@@ -1,0 +1,16 @@
+{
+    "grid_width": 6,
+    "grid_height": 8,
+    "num_d_agents": 4,
+    "num_r_agents": 9,
+    "world_mobility": "F",
+    "interaction_types": ["dd", "RR", "dR", "Rd"],
+    "interaction_range": 1,
+    "update_mode": "sync",
+    "interaction_direction": "one-way",
+    "delta_mode": "fixed",
+    "fp": 1.0,
+    "normalization_method": "equal_displacement",
+    "iterations": 100,
+    "seed": 10
+}
