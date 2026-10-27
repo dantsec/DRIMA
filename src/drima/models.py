@@ -241,6 +241,7 @@ class Agent:
     movement_pattern: List[float]
     position: Tuple[int, int]
     properties: AgentProperties = field(default_factory=AgentProperties)
+    allow_unnormalized: bool = False
 
     def __post_init__(self) -> None:
         """Validate agent name, movement pattern, and position invariants."""
@@ -264,7 +265,7 @@ class Agent:
                 self.movement_pattern[idx] = 0.0
 
         total_prob = sum(self.movement_pattern)
-        if abs(total_prob - 1.0) > 1e-2:
+        if not self.allow_unnormalized and abs(total_prob - 1.0) > 1e-2:
             raise ValueError(
                 f"Agent '{self.name}' movement_pattern probabilities must sum to 1.0 "
                 f"(within tolerance), got {total_prob:.6f}."
@@ -308,6 +309,7 @@ class Agent:
             movement_pattern=list(self.movement_pattern),
             position=(self.position[0], self.position[1]),
             properties=self.properties.clone(),
+            allow_unnormalized=True,
         )
 
     @classmethod

@@ -159,13 +159,14 @@ def sample_direction(
     """Sample a compass direction (`E`..`X`) according to the probability distribution.
 
     Args:
-        movement_pattern: 9-element sequence of non-negative probabilities summing to 1.0.
+        movement_pattern: 9-element sequence of non-negative probabilities.
         rng: `random.Random` instance for reproducible sampling.
 
     Returns:
         Chosen direction string from `DIRECTIONS`.
     """
-    threshold = rng.random()
+    total = sum(p for p in movement_pattern if p > 0.0)
+    threshold = rng.random() * (total if total > 0.0 else 1.0)
     cumulative = 0.0
     last_positive_idx = 0
     for idx, prob in enumerate(movement_pattern):
