@@ -33,5 +33,7 @@
     "delta_mode": "fixed",
     "fp": 1.0,
     "iterations": 50,
-    "seed": 7
+    "seed": 7,
+    "interaction_direction": "one-way",
+    "normalization_method": "equal_displacement"
 }
