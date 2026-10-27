@@ -1,0 +1,226 @@
+2026-10-27 20:09:03 | INFO    | ========================================================================
+2026-10-27 20:09:03 | INFO    | DRIMA Simulation Initialized
+2026-10-27 20:09:03 | INFO    | Grid Size: 8x5 | Mobility: F | Interaction Types: ['dd', 'RR', 'dR', 'Rd'] | Range R: 1
+2026-10-27 20:09:03 | INFO    | Update Mode: sync | Direction Mode: one-way | Delta Mode: fixed | F_p: 1.0000 | Norm: proportional
+2026-10-27 20:09:03 | INFO    | Iterations: 200 | Seed: 42 | Shared Cells Allowed: True
+2026-10-27 20:09:03 | INFO    | ------------------------------------------------------------------------
+2026-10-27 20:09:03 | INFO    | Initial Agent D01  (D) at pos=(2, 1) | dom=SE | pattern=[0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 1.000, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent D02  (D) at pos=(5, 2) | dom=E  | pattern=[1.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R01  (R) at pos=(4, 2) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R02  (R) at pos=(2, 5) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R03  (R) at pos=(2, 5) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R04  (R) at pos=(7, 1) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R05  (R) at pos=(1, 1) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | Initial Agent R06  (R) at pos=(4, 2) | dom=E  | pattern=[0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.000]
+2026-10-27 20:09:03 | INFO    | ========================================================================
+2026-10-27 20:09:03 | INFO    | Step 0001 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0002 [sync] | Interactions: 6 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0003 [sync] | Interactions: 5 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0004 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0005 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0006 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0007 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0008 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0009 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0010 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0011 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0012 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0013 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0014 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0015 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0016 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0017 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0018 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0019 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0020 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0021 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0022 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0023 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0024 [sync] | Interactions: 6 (effective: 6) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0025 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0026 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0027 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0028 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0029 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0030 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0031 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0032 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0033 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0034 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0035 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0036 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0037 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0038 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0039 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0040 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0041 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0042 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0043 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0044 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0045 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0046 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0047 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0048 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0049 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0050 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0051 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0052 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0053 [sync] | Interactions: 5 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0054 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0055 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0056 [sync] | Interactions: 2 (effective: 1) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0057 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0058 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0059 [sync] | Interactions: 2 (effective: 1) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0060 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0061 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0062 [sync] | Interactions: 6 (effective: 6) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0063 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0064 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0065 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0066 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0067 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0068 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0069 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0070 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0071 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0072 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0073 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0074 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0075 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0076 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0077 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0078 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0079 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0080 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0081 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0082 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0083 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0084 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0085 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0086 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0087 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0088 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0089 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0090 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0091 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0092 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0093 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0094 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0095 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0096 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0097 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0098 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0099 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0100 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0101 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0102 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0103 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0104 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0105 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0106 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0107 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0108 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0109 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0110 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0111 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0112 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0113 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0114 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0115 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0116 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0117 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0118 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0119 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0120 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0121 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0122 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0123 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0124 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0125 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0126 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0127 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0128 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0129 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0130 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0131 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0132 [sync] | Interactions: 6 (effective: 6) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0133 [sync] | Interactions: 6 (effective: 6) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0134 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0135 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0136 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0137 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0138 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0139 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0140 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0141 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0142 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0143 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0144 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0145 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0146 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0147 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0148 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0149 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0150 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0151 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0152 [sync] | Interactions: 5 (effective: 5) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0153 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0154 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0155 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0156 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0157 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0158 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0159 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0160 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0161 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0162 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0163 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0164 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0165 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0166 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0167 [sync] | Interactions: 2 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0168 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0169 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0170 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0171 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0172 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0173 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0174 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0175 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0176 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0177 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0178 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0179 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0180 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0181 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0182 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0183 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0184 [sync] | Interactions: 4 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0185 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0186 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0187 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0188 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0189 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0190 [sync] | Interactions: 5 (effective: 4) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0191 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0192 [sync] | Interactions: 3 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0193 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0194 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0195 [sync] | Interactions: 3 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0196 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0197 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0198 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0199 [sync] | Interactions: 4 (effective: 2) | Movements: 8
+2026-10-27 20:09:03 | INFO    | Step 0200 [sync] | Interactions: 4 (effective: 3) | Movements: 8
+2026-10-27 20:09:03 | INFO    | ========================================================================
+2026-10-27 20:09:03 | INFO    | Simulation Completed | Total Steps: 200 | Mean R Max-Prob: 0.8185 | R Converged (>=0.95): 1/6
+2026-10-27 20:09:03 | INFO    | Final Agent   D01  (D) at pos=(2, 1) | dom=SE | max_p=1.000 | pattern=[0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 1.000, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   D02  (D) at pos=(5, 2) | dom=E  | max_p=1.000 | pattern=[1.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R01  (R) at pos=(8, 2) | dom=SE | max_p=0.696 | pattern=[0.283, 0.004, 0.004, 0.004, 0.004, 0.004, 0.004, 0.696, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R02  (R) at pos=(6, 4) | dom=E  | max_p=0.774 | pattern=[0.774, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.217, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R03  (R) at pos=(8, 3) | dom=SE | max_p=0.696 | pattern=[0.283, 0.004, 0.004, 0.004, 0.004, 0.004, 0.004, 0.696, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R04  (R) at pos=(5, 1) | dom=E  | max_p=0.885 | pattern=[0.885, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.111, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R05  (R) at pos=(2, 2) | dom=SE | max_p=0.976 | pattern=[0.023, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.976, 0.000]
+2026-10-27 20:09:03 | INFO    | Final Agent   R06  (R) at pos=(6, 1) | dom=E  | max_p=0.885 | pattern=[0.885, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.111, 0.000]
+2026-10-27 20:09:03 | INFO    | ========================================================================
