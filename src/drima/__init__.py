@@ -91,6 +91,13 @@ from src.drima.world import (
 )
 from src.drima.simulation import SimulationResult, run_simulation
 from src.drima.visualizer import display_history, display_world
+from src.drima.analysis import (
+    extract_agent_probability_series,
+    extract_convergence_series,
+    extract_interaction_series,
+    extract_position_series,
+    load_or_validate_history,
+)
 
 __all__ = [
     "DIRECTIONS",
@@ -112,8 +119,13 @@ __all__ = [
     "determine_modifiability",
     "display_history",
     "display_world",
+    "extract_agent_probability_series",
+    "extract_convergence_series",
+    "extract_interaction_series",
+    "extract_position_series",
     "get_neighbors",
     "interact_pair",
+    "load_or_validate_history",
     "moore_distance",
     "move_agent",
     "normalize_equal_displacement",
